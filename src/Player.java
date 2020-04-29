@@ -51,13 +51,12 @@ public class Player {
     public static void convert(String mode, String playerUsername) throws IOException {
         Player player = new Player(playerUsername);
         if (mode.equals("1")) {
-            //UUID playerOfflineUUID = player.usernameToOfflineUUID();
-            UUID playerOfflineUUID = player.offlineUUID;
-            System.out.println(playerUsername + "的离线uuid是：" + playerOfflineUUID.toString());
+            System.out.println(playerUsername + "的离线uuid是：" + player.offlineUUID.toString());
         } else if (mode.equals("2")) {
-            //String playerOnlineUUID = player.usernameToOnlineUUID();
-            String playerOnlineUUID = player.onlineUUID;
-            System.out.println(playerUsername + "的正版uuid是：" + playerOnlineUUID);
+            System.out.println(playerUsername + "的正版uuid是：" + player.onlineUUID);
+        } else if (mode.equals("3")) {
+            System.out.println(playerUsername + "的离线uuid是：" + player.offlineUUID.toString());
+            System.out.println(playerUsername + "的正版uuid是：" + player.onlineUUID);
         }
     }
 
@@ -65,6 +64,7 @@ public class Player {
         System.out.println("请选择模式：（输入序号）");
         System.out.println("1. 玩家名 --> 离线UUID");
         System.out.println("2. 玩家名 --> 正版UUID");
+        System.out.println("3. 我全都要！");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String mode = br.readLine();
         if (args.length == 0) {
