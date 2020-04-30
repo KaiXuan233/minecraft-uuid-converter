@@ -23,7 +23,7 @@ public class Player {
     }
 
     public String usernameToOnlineUUID() throws IOException {
-        //Code copied from https://www.baeldung.com/java-http-request
+        //credit: https://www.baeldung.com/java-http-request
         URL mojangAPIurl = new URL("https://api.mojang.com/users/profiles/minecraft/" + username);
         HttpURLConnection con = (HttpURLConnection) mojangAPIurl.openConnection();
         con.setRequestMethod("GET");
