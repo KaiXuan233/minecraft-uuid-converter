@@ -13,7 +13,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-
 public class convertFile {
     //create xml files from usernames
     public static void createXML(String[] usernames) throws IOException {
@@ -32,9 +31,7 @@ public class convertFile {
                 Player player1 = new Player(usernames[i]);
                 offlineUUIDs[i] = player1.offlineUUID;
                 onlineUUIDs[i] = player1.onlineUUID;
-                //
-                System.out.println(usernames[i] + " " + offlineUUIDs[i] + " " + onlineUUIDs[i]);
-                //
+                //System.out.println(usernames[i] + " " + offlineUUIDs[i] + " " + onlineUUIDs[i]);
                 Element player = document.createElement("player");
                 Element username = document.createElement("username");
                 Element offlineUUID = document.createElement("offlineUUID");
@@ -100,6 +97,7 @@ public class convertFile {
         } else {
             File input = new File(args[0]);
             String[] usernames = convertFileIntoStringArray(input);
+            createXML(usernames);
         }
     }
 }
